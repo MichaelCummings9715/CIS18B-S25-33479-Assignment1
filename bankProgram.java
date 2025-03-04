@@ -1,4 +1,3 @@
-package school;
 import java.util.Scanner;
 
 
@@ -24,6 +23,7 @@ public class bankProgram {
 		Scanner keyboard = new Scanner(System.in);
 		boolean active = true;
 		
+		// display menu options
 		System.out.println("\nWelcome to Simple Bank System");
 		System.out.println("1. Create Account");
 		System.out.println("2. Deposit Money");
@@ -32,8 +32,10 @@ public class bankProgram {
 		System.out.println("5. Exit \n");
 		
 		while(active) {
+			
 			int menuChoice = displayOptions(keyboard);
 			
+			//determine user selection
 			
 			if (menuChoice == 1) {
 				// Prompt account holder name
@@ -74,7 +76,7 @@ public class bankProgram {
 				active = false;
 			}
 			
-			else if (menuChoice > 5) {
+			else if (menuChoice < 1 || menuChoice > 5) {
 				System.out.println("PLEASE ENTER A VALID NUMBER");
 			}
 			
