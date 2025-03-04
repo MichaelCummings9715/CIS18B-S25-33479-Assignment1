@@ -3,17 +3,11 @@ import java.util.Scanner;
 
 public class bankProgram {
 	
-	public static int displayOptions(Scanner keyboard) {
-		System.out.print("Enter your choice: ");
+	public static int displayOptions(Scanner keyboard) { // Method to display options and get the user's choice
+		System.out.print("Enter your choice: "); // Prompts user for input
 		
-		return keyboard.nextInt();
+		return keyboard.nextInt(); // Reads and returns the user choice
 	}
-	
-	public void menuChoice(int menuChoice) {
-		
-	}
-	
-
 	
 	
 	public static void main(String[] args) {
@@ -21,7 +15,8 @@ public class bankProgram {
 		
 		BankAccount account = new BankAccount();
 		Scanner keyboard = new Scanner(System.in);
-		boolean active = true;
+		boolean active = true; // Boolean variable to control loop execution
+
 		
 		// display menu options
 		System.out.println("\nWelcome to Simple Bank System");
@@ -56,27 +51,27 @@ public class bankProgram {
 			
 			}
 			
-			else if (menuChoice == 2) {
+			else if (menuChoice == 2) { // Deposit money option
 				System.out.print("Enter amount to deposit: ");
-				account.deposit(keyboard.nextDouble());
+				account.deposit(keyboard.nextDouble()); // uses deposit method with user input
 				System.out.println("Deposit successful! New balance: $" + account.getBalance() + "\n");
 			}
 			
-			else if (menuChoice == 3) {
+			else if (menuChoice == 3) { // Withdraw money option
 				System.out.print("Enter amount to withdraw: ");
-				account.withdraw(keyboard.nextDouble());
+				account.withdraw(keyboard.nextDouble()); // Withdraws amount entered with widraw method
 			}
 			
-			else if (menuChoice == 4) {
-				account.displayBalance();
+			else if (menuChoice == 4) {  // Check balance option
+				account.displayBalance(); // Calls method to display account balance
 			}
 			
-			else if (menuChoice == 5) {
+			else if (menuChoice == 5) {  // Exit option
 				System.out.print("Thank you for using Simple Bank System!");
 				active = false;
 			}
 			
-			else if (menuChoice < 1 || menuChoice > 5) {
+			else if (menuChoice < 1 || menuChoice > 5) { // basic error handling, input validation
 				System.out.println("PLEASE ENTER A VALID NUMBER");
 			}
 			
