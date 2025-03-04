@@ -1,4 +1,3 @@
-package school;
 
 public class BankAccount {
 	String accountHolderName;
@@ -53,4 +52,5 @@ public class BankAccount {
 	
 }
 
+ 	
 	
